@@ -97,44 +97,10 @@ on the original unmodified data file used during the research phase.
 
 ## Important note on reproducibility
 
-Running this notebook will produce results that are close to but not identical 
-to the numbers above. There are two reasons for this.
+Running this notebook will produce results that are same or close to but not identical 
+to the numbers above. The reasons for this.
 
-**Reason 1 — Data refinement**
-
-The input data file has been updated since Paper 1 was submitted. For Paper 2, 
-the LOS values, ICU hours, and ICD code counts were re-extracted and verified 
-against the administrative source records. These corrections affected a subset 
-of rows. The Paper 1 results were produced on the original unmodified file. 
-The current file in this repository reflects the corrected version.
-
-When the notebook is run on the current file, the results are:
-
-### Task A — SCIM discharge outcome (rerun)
-
-| Model | Accuracy | Balanced Acc | Macro F1 |
-|---|---|---|---|
-| **XGBoost** | **0.794** | **0.779** | **0.789** |
-| RandomForest | 0.782 | 0.757 | 0.768 |
-| LightGBM | 0.770 | 0.759 | 0.766 |
-| ExtraTrees | 0.733 | 0.695 | 0.714 |
-| HistGB | 0.733 | 0.732 | 0.735 |
-
-### Task B — Rehabilitation LOS (rerun)
-
-| Model | Accuracy | Balanced Acc | Macro F1 |
-|---|---|---|---|
-| **RandomForest** | **0.585** | **0.579** | **0.578** |
-| LightGBM | 0.579 | 0.579 | 0.575 |
-| XGBoost | 0.579 | 0.579 | 0.578 |
-| HistGB | 0.560 | 0.559 | 0.558 |
-| ExtraTrees | 0.547 | 0.546 | 0.546 |
-
-The thresholds, methodology, feature set, and model rankings for Task A are 
-consistent between both runs. The LOS improvement in the rerun reflects the 
-corrected LOS values from the data refinement carried out for Paper 2.
-
-**Reason 2 — Library version sensitivity**
+**Reason — Library version sensitivity**
 
 GroupShuffleSplit uses a random number generator whose behavior can vary slightly 
 across scikit-learn versions even with the same random seed. This can shift which 
