@@ -1,5 +1,4 @@
-# Paper 1 — Interpretable Stratification of Functional Outcome 
-# and Rehabilitation Length of Stay at Admission
+# Interpretable Stratification of Functional Outcome and Rehabilitation Length of Stay at Admission
 
 **Published at:** IEEE World Congress on Computational Intelligence (WCCI 2026)  
 **Location:** Maastricht, Netherlands  
